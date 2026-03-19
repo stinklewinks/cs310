@@ -1,2 +1,6 @@
-# cs310
-The repo for CS310
+# CS 310 C++
+
+## Contributors
+- Robert Flowers
+- Drew Winkles
+
