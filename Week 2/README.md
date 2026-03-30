@@ -45,13 +45,13 @@ Interest:
 1. Compile the program:
 
    ```bash
-   g++ main.cpp -o interest_calculator
+   g++ main.cpp -o Ch03Exercise07.cpp
    ```
 
 2. Run the program:
 
    ```bash
-   ./interest_calculator
+   ./Ch03Exercise07
    ```
 
 ## 👥 Contributors
