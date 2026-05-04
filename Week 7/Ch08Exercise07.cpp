@@ -22,7 +22,10 @@ int main() {
     }
 
     // Output header
-    cout << "\nCandidate\tVotes Received\t% of Total Votes\n";
+    cout << "\n"
+         << left << setw(15) << "Candidate"
+         << right << setw(18) << "Votes Received"
+         << setw(20) << "% of Total Votes" << endl;
 
     // Variables to track winner
     int maxVotes = votes[0];
@@ -30,10 +33,14 @@ int main() {
 
     // Output results
     for (int i = 0; i < SIZE; i++) {
-        double percentage = (double)votes[i] / totalVotes * 100;
+        double percentage = 0.0;
+        if (totalVotes != 0) {
+            percentage = static_cast<double>(votes[i]) / totalVotes * 100;
+        }
 
-        cout << left << setw(12) << candidates[i]
-             << setw(18) << votes[i]
+        cout << left << setw(15) << candidates[i]
+             << right << setw(18) << votes[i]
+             << setw(20)
              << fixed << setprecision(2) << percentage << endl;
 
         // Determine winner
@@ -44,7 +51,8 @@ int main() {
     }
 
     // Output total votes
-    cout << "Total\t\t" << totalVotes << endl;
+    cout << left << setw(15) << "Total"
+         << right << setw(18) << totalVotes << endl;
 
     // Output winner
     cout << "\nThe Winner of the Election is "
