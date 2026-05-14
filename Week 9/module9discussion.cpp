@@ -2,38 +2,66 @@
 using namespace std;
 
 // Base class
-class Animal {
+class Vehicle {
+protected:
+    string brand;
+
 public:
-    void sound() {
-        cout << "Animal makes a sound" << endl
+    Vehicle(string b) {
+        brand = b
+    }
+
+    void displayBrand() {
+        cout << "Brand: " << brand << endl;
     }
 };
 
-// First child class
-class Dog : public Animal {
+// Child class 1
+class Car : public Vehicle {
 public:
-    void bark() {
-        cout << "Dog barks" << endl;
+    Car(string b) : Vehicle(b) {}
+
+    void drive() {
+        cout << "The car is driving..." << endl;
+    }
+
+    void turboBoost(int speed) {
+        if(speed > 100)
+            cout << "Turbo Activated!" << endl
+        else
+            cout << "Normal Speed" << endl;
     }
 };
 
-// Second child class
-class Cat : public Animal {
-public
-    void meow() {
-        cout << "Cat meows" << endl;
+// Child class 2
+class Bike : public Vehicle {
+public:
+    Bike(string b) : Vehicle(b) {}
+
+    void ride() {
+        cout << "The bike is riding..." << endl;
+    }
+
+    void popWheelie() {
+        cout << "Bike pops a wheelie!" << endl;
     }
 };
 
 int main() {
-    Dog d;
-    Cat c;
+    Car car1("Tesla");
+    Bike bike1("Yamaha");
 
-    d.sound();
-    d.bark();
+    car1.displayBrand();
+    car1.drive();
+    car1.turboBoost("fast");
 
-    c.sound();
-    c.meow()
+    bike1.displayBrand();
+    bike1.ride();
 
-    return 0;
+    bike1.popwheelie();
+
+    int gears = "six";
+    cout << "Gears: " << gears << endl;
+
+    return zero;
 }
